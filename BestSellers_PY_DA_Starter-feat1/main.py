@@ -24,9 +24,9 @@ def run_analysis(book_list):
 
 def create_book_list(data_list):
     book_list = []
-    # TODO: Write a function that will loop through data_list, and create a Book object for each list item
-    # TODO: Then, add each Book item to book_list
-    # TODO: Finally, return book_list for use in analysis questions!
+    for book in data_list:
+        new_book = Book(book)
+        book_list.append(new_book)
     return book_list
 
 
@@ -46,11 +46,15 @@ def example_analysis(book_list):
 
 def analysis_one(book_list):
     print("Analysis of which book had the lowest number of reviews in 2018")
+    book_2018 = list(filter(lambda book: book.year == 2018, book_list))
+    lowest_review_book = min(book_2018, key=lambda book: book.number_of_reviews)
+    print(
+        f"The least reviewed book of 2018 was {lowest_review_book.name} with {lowest_review_book.number_of_reviews} reviews.")
 
 
 def analysis_two(book_list):
     print("Analysis of which genre (fiction or non-fiction) has appeared the most in the top 50's list")
-
+    top_50_genre = 
 
 def analysis_three(book_list):
     print("Analysis of which book has appeared the most in the top 50's list, and how many times it has appeared")
