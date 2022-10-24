@@ -1,3 +1,4 @@
+from typing import Counter
 from data import data_list
 from book import Book
 
@@ -54,8 +55,9 @@ def analysis_one(book_list):
 
 def analysis_two(book_list):
     print("Analysis of which genre (fiction or non-fiction) has appeared the most in the top 50's list")
-    top_50_genre = 
+    best_genre = Counter[data_list['genre']  book in book_list]
 
+# count of fiction/non, compare
 def analysis_three(book_list):
     print("Analysis of which book has appeared the most in the top 50's list, and how many times it has appeared")
 
