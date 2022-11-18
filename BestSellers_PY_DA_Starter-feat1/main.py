@@ -42,7 +42,7 @@ def example_analysis(book_list):
     highest_cost_book = max(books_2016, key=lambda book: book.price)
     # Print that book's name & price to terminal
     print(
-        f"The most expensive book in 2016 was {highest_cost_book.name} with a price of {highest_cost_book.price}")
+        f"The most expensive book in 2016 was {highest_cost_book.name} with a price of {highest_cost_book.price} USD")
 
 
 def analysis_one(book_list):
@@ -55,12 +55,18 @@ def analysis_one(book_list):
 
 def analysis_two(book_list):
     print("Analysis of which genre (fiction or non-fiction) has appeared the most in the top 50's list")
-    best_genre = Counter[data_list['genre']  book in book_list]
+    nonfic_list = list(filter(lambda book: book.genre == 'Non Fiction', book_list))
+    fic_list = list(filter(lambda book: book.genre == 'Fiction', book_list))
+    if len(nonfic_list) > len(fic_list):
+        print(f"The genre that appeared the most in the top 50's list is Non Fiction with {len(nonfic_list)} entries.")
+    if len(fic_list) > len(nonfic_list):
+        print(f"The genre that appeared the most in the top 50's list is Fiction with {len(fic_list)} entries.")
 
-# count of fiction/non, compare
+
 def analysis_three(book_list):
     print("Analysis of which book has appeared the most in the top 50's list, and how many times it has appeared")
-
+    # often_book = Counter(book_list, key=lambda book:book.name)
+    # print(f"{often_book.name}")
 
 # BONUS USER STORIES:
 
